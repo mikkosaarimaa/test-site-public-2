@@ -1,0 +1,593 @@
+* {
+    color: white;
+    /*border: 1px solid red;*/
+    border: none;
+}
+
+body {
+    font-family: 'Montserrat', 'Verdana', sans-serif;
+    margin: 0;
+    background-color: black;
+
+    /* padding-top: 96px; /* makes top of page content not go under fixed navbar */
+}
+
+p {
+    margin: 0;
+    padding: 10px 0;
+    font-size: 20px;
+}
+
+a, button, span {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* ----------- top navigation bar: -------------- */
+
+@media only screen and (max-width: 1030px) {
+    .navbar ul {
+        display: none;
+    }
+}
+
+.navbar {
+    overflow: hidden;
+    /*background-color: black;*/
+    top: 0;
+    width: 100%;
+    /*z-index: 99;*/
+}
+
+ul {
+    float: right;
+    margin: 0 20px 0 0;
+    list-style-type: none;
+}
+  
+li {
+    float: left;
+}
+  
+li a {
+    display: block;
+    padding: 40px 16px;
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color .3s;
+    /*border-radius: 2rem 0 0 0;*/
+}
+
+  
+li a:hover:not(.active) {
+    color: #0048ce;
+}
+  
+.active {
+    color: #0048ce;
+}
+
+/* --------- navbar search button and search bar: ---------- */
+
+.fa-search {
+    color: white;
+}
+  
+.search-container {
+    float: right;
+    margin: 22px 22px 22px 0;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+@media only screen and (max-width: 1030px) {
+    .search-container {
+        margin-right: 70px;
+    }
+}
+
+.search-container:hover {
+    border: 2px solid white;
+}
+  
+input[type=text] {
+    color: white;
+    background-color: black;
+    font-size: 16px;
+    width: 0;
+    border: none;
+    transition: width .5s;
+}
+
+@media only screen and (max-width: 520px) {
+    input[type=text] {
+        max-width: 100px;
+    }
+}
+@media only screen and (max-width: 463px) {
+    input[type=text] {
+        max-width: 80px;
+    }
+}
+
+.search-container button {
+    padding: 5px 5px 5px 0;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: black;
+}
+
+.search-container input:focus {
+    outline: none;
+}
+
+.search-container:hover input[type=text] {
+    width: 150px;
+}
+
+/* ------- navbar burger MOBILE ONLY button ------- */
+
+@media only screen and (min-width: 1031px) { 
+    .navbar span {
+        display: none;
+    }
+}
+
+.navbar span {
+    position: fixed;
+    top: 15px;
+    right: 15px; 
+    padding: 12px 16px;
+    transition: color .3s;
+    font-size: 26px;
+    z-index: 2;
+}
+.navbar span:hover {
+    color: #0048ce;
+}
+
+#topMenu {
+    /*display: block;*/
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    /* box-sizing: border-box; /* jotta border ei näy 'yli' kun menu suljettu */
+    background-color: rgb(17, 17, 17);
+    transition: padding, height, .5s;
+    overflow: hidden;
+}
+  
+#topMenu a {
+    text-decoration: none;
+    padding: 8px 8px 8px 32px;
+    transition: color .3s;
+    color: #818181;
+    display: block;
+}
+  
+#topMenu a:hover {
+    color: #f1f1f1;
+}
+  
+#closebtn {
+    font-size: 46px;
+    margin: 0 0 0 28px;
+}
+#closebtn:hover {
+    cursor:pointer;
+}
+  
+@media screen and (max-height: 460px) {
+    #topMenu {padding-top: 15px;}
+    #topMenu a {font-size: 18px;}
+}
+
+/*--- dropdown menu alignment ---*/
+/*
+.dropdown-align {
+}
+*/
+
+/* ------- navbar main title ------- */
+
+#main-title {
+    font-size: 20px;
+    margin: 21px;
+    float: left;
+    color: white;
+    padding: 12px 20px;
+    font-family: 'Orbitron', sans-serif;
+    border: solid 1px #0048ce;
+}
+
+/*---------- icons: ---------*/
+
+.fa-cloud, .fa-clock, .fa-file {
+    font-size: 50px;
+    display: inline-block;
+    color: white;
+    padding: 20px 20px 0 0;
+}
+
+/*-------------------------- text boxes with images: ------------------------------*/
+
+.container-top {
+    display: grid;
+    border: 6px solid #0048ce;
+    grid-gap: 6px;
+    background-color: #0048ce;
+}
+@media only screen and (min-width: 1553px) {.container-top {grid-template-columns: 1fr 1fr 1fr 1fr;}}
+@media only screen and (max-width: 1552px) {.container-top {grid-template-columns: 1fr 1fr;}}
+@media only screen and (max-width: 655px) {.container-top {grid-template-columns: auto;}}
+
+/*
+.container-top-box {
+    min-height: 407px;
+}
+*/
+
+.container-top-box:hover {cursor: pointer;}
+
+.container-top-box-content {
+    padding: 14%;
+    background-color: black;
+    transition: background-color .6s;
+}
+
+.container-top-box h2 {
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+.image-filter {background-color: rgba(0, 54, 153, .4);}
+
+/* muistutus: .parent:hover .child, .parent:focus .child {}  ->  tarkoittaa: kun parenttia hoveraa, tee jotain childille */
+
+/* ----------------------- .image-div: -------------------------- */
+
+.image-div {
+    background-size: 120%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-size .6s;
+}
+@media screen and (min-width: 1553px) and (max-height: 1700px) {
+    .image-div {
+        background-size: 160%;
+    }
+}
+@media screen and (max-width: 958px) {
+    .image-div {
+        background-size: 150%;
+    }
+}
+@media screen and (max-width: 814px) {
+    .image-div {
+        background-size: 180%;
+    }
+}
+@media screen and (max-width: 339px) {
+    .image-div {
+        background-size: 300%;
+    }
+}
+
+/* muistutus: targettaa ensin kaikkien yhteistä parenttia (korkeimmalla tasolla), sitten child elementtiä johon haluat muutoksesi, seuraava hyvä esimerkki: */
+
+.container-top .container-top-box:nth-of-type(1) .image-div {
+    background-image: url("https://images.unsplash.com/photo-1546795729-f3a5d42087f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80");
+}
+.container-top .container-top-box:nth-of-type(2) .image-div {
+    background-image: url("https://images.unsplash.com/photo-1540841612074-7beabf7dc726?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2089&q=80");
+}
+.container-top .container-top-box:nth-of-type(3) .image-div {
+    background-image: url("https://images.unsplash.com/photo-1457305237443-44c3d5a30b89?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1653&q=80");
+}
+.container-top .container-top-box:nth-of-type(4) .image-div {
+    background-image: url("https://images.unsplash.com/photo-1546795729-f3a5d42087f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80");
+}
+.container-top .container-top-box:nth-of-type(5) .image-div {
+    background-image: url("https://images.unsplash.com/photo-1540841612074-7beabf7dc726?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2089&q=80");
+}
+.container-top .container-top-box:nth-of-type(6) .image-div {
+    background-image: url("https://images.unsplash.com/photo-1546795729-f3a5d42087f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80");
+}
+.container-top .container-top-box:nth-of-type(7) .image-div {
+    background-image: url("https://images.unsplash.com/photo-1540841612074-7beabf7dc726?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2089&q=80");
+}
+.container-top .container-top-box:nth-of-type(8) .image-div {
+    background-image: url("https://images.unsplash.com/photo-1457305237443-44c3d5a30b89?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1653&q=80");
+}
+
+/* --------- zoom image on hover: ------------ */
+
+.image-div:nth-of-type(1):hover {
+    background-size: 140%;
+}
+@media screen and (min-width: 1553px) and (max-height: 1700px) {
+    .image-div:nth-of-type(1):hover {
+        background-size: 180%;
+    }
+}
+@media screen and (max-width: 958px) {
+    .image-div:nth-of-type(1):hover {
+        background-size: 170%;
+    }
+}
+@media screen and (max-width: 814px) {
+    .image-div:nth-of-type(1):hover {
+        background-size: 200%;
+    }
+}
+@media screen and (max-width: 339px) {
+    .image-div:nth-of-type(1):hover {
+        background-size: 300%;
+    }
+}
+
+/*
+.image-div:nth-of-type(2):hover {
+    background-size: 110%;
+}
+.image-div:nth-of-type(3):hover {
+    background-size: 110%;
+}
+.image-div:nth-of-type(4):hover {
+    background-size: 110%;
+}
+.image-div:nth-of-type(5):hover {
+    background-size: 110%;
+}
+.image-div:nth-of-type(6):hover {
+    background-size: 110%;
+}
+.image-div:nth-of-type(7):hover {
+    background-size: 110%;
+}
+.image-div:nth-of-type(8):hover {
+    background-size: 110%;
+}
+*/
+
+/* ------------------------------------------------------------------------- */
+
+.container-top-box-content:nth-child(1):hover {
+    background-color: transparent;
+}
+/*
+.container-top-box-content:nth-child(2):hover {
+    background-color: transparent;
+}
+.container-top-box-content:nth-child(3):hover {
+    background-color: transparent;
+}
+.container-top-box-content:nth-child(4):hover {
+    background-color: transparent;
+}
+.container-top-box-content:nth-child(5):hover {
+    background-color: transparent;
+}
+.container-top-box-content:nth-child(6):hover {
+    background-color: transparent;
+}
+.container-top-box-content:nth-child(7):hover {
+    background-color: transparent;
+}
+.container-top-box-content:nth-child(8):hover {
+    background-color: transparent;
+}
+*/
+
+/*----- three grey boxes and background: -----*/
+
+.container-fullwide {
+    background-color: black;
+    width: 100%;
+    margin: 0;
+}
+@media only screen and (min-width: 1552px) {
+    .container-fullwide {
+        padding: 50px 0;
+    }
+}
+
+.container-centered {
+    margin: auto;
+    max-width: 1200px;
+}
+
+.container-grid {
+    display: grid;
+}
+@media only screen and (min-width: 1552px) {
+    .container-grid {
+        grid-template-columns: auto auto;
+    }
+    .bottombox {
+        grid-column-start: 1; grid-column-end: 3;
+    }
+}
+@media only screen and (max-width: 1552px) {
+    .container-grid {
+        grid-template-columns: auto;
+    }
+}
+
+.leftbox {
+    background-color: rgba(41, 42, 48, 0.8);
+}
+.rightbox {
+    background-color: rgba(64, 64, 73, 0.8);
+}
+.bottombox {
+    background-color: rgba(25, 27, 31, 0.8);
+}
+.leftbox, .bottombox, .rightbox {
+    padding: 45px;
+}
+@media only screen and (min-width: 1552px) {
+    .leftbox, .bottombox, .rightbox {
+        min-height: 350px;
+    }
+}
+
+.leftbox h2, .rightbox h2, .bottombox h2 {
+    display: inline;
+    color: white;
+}
+
+.leftbox p, .rightbox p, .bottombox p {
+    padding: 25px 0 25px 22px;
+    color: white;
+}
+
+/* video in background with content over it */
+
+.videobox-container {
+    height: 400px;
+    position: relative;
+    display: grid;
+    place-items: center; /* works with grid */
+    width: 100%;
+    margin: 0 auto;
+}
+
+video.fullscreen {
+    position: absolute;
+    z-index: 0;
+    object-fit: cover;
+    width:100%;
+    height:100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ 
+    /*
+    &::-webkit-media-controls {
+      display:none !important;
+    }
+    */
+}
+ 
+.videobox-content {
+    z-index: 1;
+    text-align: justify;
+    max-width: 420px;
+}
+.videobox-content h2 {
+    text-align: center;
+}
+
+.videobox-gradient {
+    position: absolute;
+    background-image: linear-gradient(black, transparent);
+    width:100%;
+    height:100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ---------footer and content: ---------*/
+footer {
+    border-top: 6px solid #0048ce;
+    width: 100%;
+    background-color: rgb(17, 17, 17);
+    min-height: 300px;
+}
+.footer-content {
+    padding-top: 90px;
+    text-align: center;
+    max-width: 500px;
+    margin: auto;
+}
+.hr-footer {
+    width: 100%;
+    height: 2px;
+    border: none;
+    background-image: linear-gradient(to right, rgba(0,0,0,0), white , rgba(0,0,0,0));
+}
+footer a {
+    color: #0048ce;
+    text-decoration: none;
+}
+
+/* button takes to top of page, rest of code in .JS file */
+
+#scrollToTopBtn {
+    background-color: transparent;
+    font-size: 44px;
+    font-family: 'Advent Pro';
+    position: fixed;
+    right: 50px;
+    bottom: 0px;
+    opacity: 0;
+    border: 2px solid white;
+    border-radius: 3px;
+    transition: opacity, bottom, .5s linear;
+    padding: 13px;
+    height: 47px;
+    color: white;
+}
+
+/* ------buttons for boxes ------*/
+.button-link {
+    background-color: transparent;
+    color: white;
+    border: 2px solid #0048ce;
+    border-radius: 3px;
+    padding: 20px;
+    display: grid;
+    margin: auto;
+    transition: background-color .3s;
+}
+.button-link:hover {
+    background-color:rgb(60, 60, 68);
+}
+
+/* media queries for small screens: */
+
+@media only screen and (max-width: 800px) {
+
+    .bar-content {
+        max-width: 600px;
+        padding: 30px;
+    }
+
+    #profile_picture img {
+        width: 100px;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    a.some_icon, .some_icon img {
+        float: right;
+        height: 25px;
+    }
+
+    .linkedin-link {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 579px) {
+    hr {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 455px) {
+    #profile_picture img {
+        margin-bottom: 50px;
+    }
+}
