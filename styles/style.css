@@ -23,6 +23,10 @@ a, button, span {
     cursor: pointer;
 }
 
+a {
+    text-decoration: none;
+}
+
 h1, h2, h3, h4 {
     font-family: 'Orbitron', sans-serif;
 }
@@ -538,18 +542,26 @@ footer a {
 }
 
 /* ------buttons for boxes ------*/
+
+.button-align { display: grid; }
+.button-container { 
+    margin: auto; 
+    height: 67px;
+}
+
+.button-hover-filter {
+    height: 0%;
+    background-color:rgb(70, 70, 80);
+    transition: height .3s;
+}
+
+.button-container:hover .button-hover-filter { height: 100%; }
+
 .button-link {
     background-color: transparent;
-    color: white;
     border: 2px solid #0048ce;
     border-radius: 3px;
     padding: 20px;
-    display: grid;
-    margin: auto;
-    transition: background-color .3s;
-}
-.button-link:hover {
-    background-color:rgb(60, 60, 68);
 }
 
 /* media queries for small screens: */
