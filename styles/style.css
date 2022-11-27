@@ -407,6 +407,8 @@ input[type=text] {
     max-width: 1200px;
 }
 
+.image-filter-2 { background: url(../img/technology-7111756_1920.jpg) no-repeat fixed center; }
+
 .container-grid {
     display: grid;
 }
@@ -551,7 +553,8 @@ footer a {
 
 .button-hover-filter {
     height: 0%;
-    background-color:rgb(70, 70, 80);
+    background-color: #0048ce;
+    /*background-color:rgb(70, 70, 80);*/
     transition: height .3s;
 }
 
